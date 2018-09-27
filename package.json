@@ -1,7 +1,7 @@
 {
-  "name": "Masterly",
+  "name": "masterly_mimple_app",
   "version": "1.0.0",
-  "description": "My dandy Nuxt.js project",
+  "description": "My terrific Nuxt.js project",
   "author": "Duncan Christie",
   "private": true,
   "scripts": {
@@ -13,7 +13,7 @@
     "precommit": "npm run lint"
   },
   "dependencies": {
-    "nuxt": "^1.0.0"
+    "nuxt": "^1.4.2"
   },
   "devDependencies": {
     "babel-eslint": "^8.2.1",

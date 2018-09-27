@@ -1,59 +1,68 @@
 <template>
-  <section class="container">
-    <div>
-      <logo/>
-      <h1 class="title">
-        Masterly
-      </h1>
-      <h2 class="subtitle">
-        My dandy Nuxt.js project
-      </h2>
-      <div class="links">
-        <a href="https://nuxtjs.org/" target="_blank" class="button--green">Documentation</a>
-        <a href="https://github.com/nuxt/nuxt.js" target="_blank" class="button--grey">GitHub</a>
+  <div>
+    <TheHeader/>
+    <TheBanner/>
+    <div class="main">
+      <div class="sidebar">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam animi aperiam autem dolore dolorem error exercitationem facere perferendis vel veniam. Aliquid architecto quae quia quo quod quos rem sed similique ut! Deleniti ea eligendi facere harum minima neque nihil quibusdam quisquam voluptate. Consequatur culpa, libero. Ab, accusantium adipisci aperiam asperiores beatae delectus deleniti distinctio doloremque doloribus dolorum eum ex illo iusto modi molestias nam neque nesciunt nisi nobis perferendis perspiciatis quam reiciendis rem saepe similique sunt tempore temporibus velit voluptatibus voluptatum. A accusantium aliquid architecto, atque consectetur culpa cumque dignissimos dolore ducimus eligendi facilis fuga inventore ipsum libero maxime quibusdam quod similique soluta ullam vitae? Accusantium autem cum illum nesciunt quas. At atque aut cum cumque dolores in incidunt laudantium, nisi optio quae quo rerum similique. Accusamus accusantium amet aut autem beatae corporis, culpa dolor eligendi et eum eveniet excepturi id, illo impedit maiores maxime mollitia nemo nihil nulla odio odit possimus quasi qui quis repudiandae similique sint sunt tempora unde velit veniam veritatis vitae voluptatem. Accusamus amet fuga, ipsum laboriosam nesciunt possimus veritatis! A, accusamus asperiores deleniti dignissimos dolorem eveniet maxime qui recusandae, reiciendis saepe sapiente tenetur. Alias amet deserunt enim iste magnam mollitia non odio pariatur qui suscipit.</p>
+      </div>
+      <div class="content">
+        <AppSection color="red">
+          <p>text</p>
+        </AppSection>
       </div>
     </div>
-  </section>
+  </div>
 </template>
 
 <script>
-import Logo from '~/components/Logo.vue'
+
+import TheHeader from '@/components/Navigation/TheHeader'
+import TheBanner from '@/components/TheBanner'
+import AppSection from "@/components/AppSection";
 
 export default {
   components: {
-    Logo
+    AppSection,
+    TheHeader,
+    TheBanner
   }
 }
+
 </script>
 
 <style>
-.container
-{
-  min-height: 100vh;
+
+.main {
+  margin-top: 60px;
+  position: relative;
+  background-color: white;
+  z-index: 18;
+  width: 100vw;
+  height: calc(100vh - 60px);
   display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
+  flex-flow: row nowrap;
+  border-top: 1px solid #e5e5e5;
 }
-.title
-{
-  font-family: "Quicksand", "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; /* 1 */
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
+
+.sidebar {
+  flex: 1 1 250px;
+  min-width: 250px;
+  max-width: 250px;
+  border-right: 1px solid #e5e5e5;
+  background-color: #f4f5f7;
+  height: 100%;
+  overflow: scroll;
+  padding: 40px;
 }
-.subtitle
-{
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
+
+.content {
+  flex: 1 1 auto;
+  overflow: scroll;
+  height: 100%;
+  background-color: white;
 }
-.links
-{
-  padding-top: 15px;
-}
+
+
 </style>
+
