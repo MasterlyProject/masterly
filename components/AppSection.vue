@@ -1,6 +1,6 @@
 <template>
-<section class="blue" :style="sectionColor">
-  {{color}}
+<section class="section" :style="sectionColor">
+  <h2>{{ title }}</h2>
   <slot/>
 </section>
 </template>
@@ -9,7 +9,11 @@
 export default {
   name: 'AppSection',
   props: {
-    color: String
+    color: String,
+    title: {
+      type: String,
+      required: false
+    }
   },
   computed: {
     sectionColor() {
@@ -23,12 +27,13 @@ export default {
 
 <style lang="stylus" scoped>
 
-.blue
+.section
   max-width 700px
   width 100%
   margin 40px auto
   padding 40px
   box-shadow 0 0 10px rgba(0, 0, 0, 0.05);
   border-top 5px solid
+  background-color white;
 
 </style>

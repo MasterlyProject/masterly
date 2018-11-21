@@ -4,7 +4,9 @@
     <div class="spacer"></div>
     <ul class="nav-items">
       <li class="nav-item">Profile</li>
-      <li class="nav-item">Login</li>
+      <nuxt-link to="/probability">
+        <li class="nav-item">Login</li>
+      </nuxt-link>
     </ul>
   </header>
 </template>
