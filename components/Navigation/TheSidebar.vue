@@ -18,7 +18,7 @@
   </div>
   <div
     v-if="selected.navDepth === 1"
-    v-for="subject in subjects"
+    v-for="subject in siteStructure.subjects"
     :key="subject.subject"
     @click="setSubject(subject)"
     class="sub_nav">
@@ -57,57 +57,18 @@
 </template>
 
 <script>
+import json from '~/static/siteStructure.json'
 export default {
   name: "TheSidebar",
   data() {
     return {
-
       selected:
-      {
-        navDepth: 1,
-        currentSubject: "",
-        currentTopic: ""
-      },
-
-      subjects: [
         {
-          subject: "Math Methods Unit 1",
-          topics: [
-            {
-              topic: "Radian Measure",
-              link: "probability",
-              contents: [
-                "arc length",
-                "area of sector",
-                "area of segment"
-              ]
-            },
-            {
-              topic: "Cosine and Sine Rules",
-              link: "probability",
-              contents: [
-                "sine rule",
-                "cosine rule",
-                "area rule"
-              ]
-            }
-          ]
+          navDepth: 1,
+          currentSubject: "",
+          currentTopic: ""
         },
-        {
-          subject: "Math Methods Unit 2",
-          topics: [
-            {
-              topic: "rad measure",
-              link: "probability",
-              contents: [
-                "arc length",
-                "area of sector",
-                "area of segment"
-              ]
-            }
-          ]
-        }
-      ]
+      siteStructure: json,
     }
   },
   methods: {
@@ -146,6 +107,7 @@ export default {
   display: flex;
   flex-flow: row nowrap;
   align-items: center;
+  margin-bottom: 6px;
 }
 
 .title p {
