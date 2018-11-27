@@ -1,7 +1,9 @@
 <template>
   <header>
     <img src="@/static/masterlyLogo.png">
-    <div class="spacer"></div>
+    <div class="spacer">
+      <h5>{{ title }}</h5>
+    </div>
     <ul class="nav-items">
       <li class="nav-item">Profile</li>
       <nuxt-link to="/probability">
@@ -13,7 +15,12 @@
 
 <script>
 export default {
-  name: "TheHeader"
+  name: "TheHeader",
+  computed: {
+    title: function () {
+      return this.$store.getters.getHeaderTitle
+    }
+  }
 }
 </script>
 
@@ -26,8 +33,8 @@ header
   flex-flow row nowrap
   align-items center
   height 60px
+  top 0
   position fixed
-  z-index 19
   padding 0 40px
 
 img
@@ -36,6 +43,7 @@ img
 
 .spacer
   flex 1 1 auto
+  text-align center
 
 .nav-items
   display flex

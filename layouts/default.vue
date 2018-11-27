@@ -1,7 +1,6 @@
 <template>
   <div>
     <TheHeader/>
-    <TheBanner/>
     <div class="main">
       <TheSidebar/>
       <div class="content">
@@ -14,14 +13,12 @@
 <script>
 
 import TheHeader from '@/components/Navigation/TheHeader'
-import TheBanner from '@/components/TheBanner'
-import TheSidebar from '@/components/Navigation/TheSidebar';
+import TheSidebar from '@/components/Navigation/TheSidebar'
 
 export default {
   components: {
     TheSidebar,
-    TheHeader,
-    TheBanner
+    TheHeader
   }
 }
 
@@ -47,14 +44,42 @@ html
   margin: 0;
 }
 
+body {
+  font-weight: 400;
+  line-height: 1.45;
+  color: #333;
+}
+
+p {margin-bottom: 1.3em;}
+
+h1, h2, h3, h4 {
+  margin: 1.414em 0 0.5em;
+  font-weight: inherit;
+  line-height: 1.2;
+}
+
+h1 {
+  margin-top: 0;
+  font-size: 2.441em;
+}
+
+h2 {font-size: 1.953em;}
+
+h3 {font-size: 1.563em;}
+
+h4 {font-size: 1.25em;}
+
+h5 {font-size: 1em;}
+
+small {font-size: 0.8em;}
+
 .main {
   margin-top: 60px;
-  position: relative;
   background-color: white;
-  z-index: 18;
   width: 100vw;
-  height: calc(100vh - 60px);
+  height: 100vh;
   display: flex;
+  position: fixed;
   flex-flow: row nowrap;
   border-top: 1px solid #e5e5e5;
 }

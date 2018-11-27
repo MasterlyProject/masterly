@@ -17,8 +17,20 @@ export default {
   },
   computed: {
     sectionColor() {
+
+      var color = this.color
+
+      switch(color) {
+        case "red": color = '#ec6d5f'
+          break
+        case "green": color = '#27c9b8'
+          break
+        case  "blue": color = '#2caaca'
+          break
+      }
+
       return {
-        'border-top-color': this.color
+        'border-top-color': color
       }
     }
   }
@@ -28,10 +40,10 @@ export default {
 <style lang="stylus" scoped>
 
 .section
-  max-width 700px
+  max-width 900px
   width 100%
   margin 40px auto
-  padding 40px
+  padding 0 40px 20px 40px
   box-shadow 0 0 10px rgba(0, 0, 0, 0.05);
   border-top 5px solid
   background-color white;
