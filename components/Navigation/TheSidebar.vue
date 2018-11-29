@@ -38,16 +38,38 @@
       v-for="topic in selected.currentSubject.topics"
       :key="topic.topic"
       @click="setTopic(topic)"
-      class="sub_nav">
+      class="sub_nav topic">
       <nuxt-link :to='topic.link'>
-        <img
-          src="@/assets/images/icons/arrowIcon.svg"
-          class="arrow_icon"/>
         <h5>
           {{ topic.topic }}
         </h5>
       </nuxt-link>
     </div>
+    <div
+      v-if="selected.navDepth === 2"
+      v-for="topic in selected.currentSubject.topics"
+      :key="topic.topic"
+      @click="setTopic(topic)"
+      class="sub_nav topic-green">
+      <nuxt-link :to='topic.link'>
+        <h5>
+          {{ topic.topic }}
+        </h5>
+      </nuxt-link>
+    </div>
+    <div
+      v-if="selected.navDepth === 2"
+      v-for="topic in selected.currentSubject.topics"
+      :key="topic.topic"
+      @click="setTopic(topic)"
+      class="sub_nav topic-red">
+      <nuxt-link :to='topic.link'>
+        <h5>
+          {{ topic.topic }}
+        </h5>
+      </nuxt-link>
+    </div>
+
     <div
       v-if="selected.navDepth === 3"
       v-for="section in selected.currentTopic.contents"
@@ -67,27 +89,31 @@ export default {
   name: "TheSidebar",
   data() {
     return {
-      selected:
-        {
-          navDepth: 1,
-          currentSubject: "",
-          currentTopic: ""
-        },
       siteStructure: json,
+    }
+  },
+  computed: {
+    selected: function () {
+      return this.$store.state.selected
     }
   },
   methods: {
     setSubject(subject) {
-      this.selected.currentSubject = subject
-      this.selected.navDepth = 2
+      let selectedState = this.$store.state.selected
+      selectedState.currentSubject = subject
+      selectedState.navDepth = 2
+      this.$store.dispatch('selectedState', selectedState)
     },
     setTopic(topic) {
-      this.selected.currentTopic = topic
-      this.selected.navDepth = 3
-      this.$store.dispatch('changeHeaderTitle', topic.topic)
+      let selectedState = this.$store.state.selected
+      selectedState.currentTopic = topic
+      selectedState.navDepth = 3
+      this.$store.dispatch('selectedState', selectedState)
     },
     navigateBack() {
-      this.selected.navDepth = this.selected.navDepth - 1;
+      let selectedState = this.$store.state.selected
+      selectedState.navDepth = selectedState.navDepth - 1;
+      this.$store.dispatch('selectedState', selectedState)
     }
   }
 
@@ -113,7 +139,7 @@ export default {
   display: flex;
   flex-flow: row nowrap;
   align-items: center;
-  margin-bottom: 6px;
+  margin-bottom: 0px;
 }
 
 .title h5 {
@@ -135,6 +161,19 @@ export default {
 .sub_nav:hover {
   background-color: #f4f5f7;
   cursor: pointer;
+}
+
+.topic {
+  border-left: 5px solid #2caaca;
+  border-bottom: 1px solid #e5e5e5;
+}
+.topic-green {
+  border-left: 5px solid #27c9b8;
+  border-bottom: 1px solid #e5e5e5;
+}
+.topic-red {
+  border-left: 5px solid #ec6d5f;
+  border-bottom: 1px solid #e5e5e5;
 }
 
 .arrow_icon {

@@ -1,15 +1,20 @@
 <template>
   <header>
+    <div
+      class="drawer-toggle"
+      @click="toggleLeftSidebar">
+      <div class="bar" />
+      <div class="bar" />
+      <div class="bar" />
+    </div>
     <img src="@/static/masterlyLogo.png">
     <div class="spacer">
       <h5>{{ title }}</h5>
     </div>
-    <ul class="nav-items">
-      <li class="nav-item">Profile</li>
-      <nuxt-link to="/probability">
-        <li class="nav-item">Login</li>
-      </nuxt-link>
-    </ul>
+    <img
+      @click="toggleRightSidebar"
+      src="@/assets/images/Icons/profileIcon.svg"
+      class="profile-image"/>
   </header>
 </template>
 
@@ -18,7 +23,15 @@ export default {
   name: "TheHeader",
   computed: {
     title: function () {
-      return this.$store.getters.getHeaderTitle
+      return this.$store.state.selected.currentTopic.topic
+    }
+  },
+  methods: {
+    toggleLeftSidebar() {
+      this.$store.dispatch('toggleLeftSidebar')
+    },
+    toggleRightSidebar() {
+      this.$store.dispatch('toggleRightSidebar')
     }
   }
 }
@@ -35,7 +48,25 @@ header
   height 60px
   top 0
   position fixed
-  padding 0 40px
+  padding 0 40px 0 20px
+
+.drawer-toggle
+  margin-right 17px
+  display flex
+  flex-direction column
+  justify-content space-around
+  height 40%
+  width 26px
+  cursor pointer
+  padding 5px
+
+.drawer-toggle:hover
+  background-color #f4f5f7
+
+.drawer-toggle .bar
+  width: 100%
+  height: 2px
+  background-color: #454545
 
 img
   max-width 150px
@@ -45,12 +76,9 @@ img
   flex 1 1 auto
   text-align center
 
-.nav-items
-  display flex
-  flex-flow row nowrap
-
-.nav-item
-  list-style none
-  margin 0 20px
+.profile-image
+  width 40px
+  border-radius 20px
+  cursor pointer
 
 </style>

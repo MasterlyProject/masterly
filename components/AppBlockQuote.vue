@@ -50,6 +50,7 @@ export default {
 <style scoped>
 
 .block-quote {
+  overflow: scroll;
   padding: 10px 10px 10px 20px;
   border-left: 5px solid;
   opacity: 1;
