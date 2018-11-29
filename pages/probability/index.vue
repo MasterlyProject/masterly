@@ -1,5 +1,6 @@
 <template>
   <div>
+
     <AppSection color="blue" title="Revision on Right Triangles">
       <AppSubtitle>
         The Right Trinagle
@@ -39,6 +40,12 @@
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci cupiditate dolorem enim est harum id itaque minima mollitia, nulla. Aliquam ex impedit, ipsa molestias nesciunt officia quia quibusdam tempore voluptas.
       </p>
       <AppImage imagePath="@/static/masterlyLogo.png"/>
+            
+      <AppModal _name="hello">
+        <p>Hello World</p>
+      </AppModal>
+
+
       <AppColumns>
         <AppColumn>
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate eos fugiat labore magnam maiores nam omnis repellat vel. Asperiores, iusto.
@@ -55,10 +62,9 @@
       <AppBlockQuote color="green">
         <div v-katex:display="'\\frac{a_i}{1+x}'"></div>
       </AppBlockQuote>
-      <AppBlockQuote color="blue">
-        <div v-katex:display="'\\frac{a_i}{1+x}'"></div>
-      </AppBlockQuote>
+      
     </AppSection>
+
   </div>
 </template>
 
@@ -71,6 +77,7 @@ import AppColumns from "@/components/AppColumns";
 import AppColumn from "@/components/AppColumn";
 import AppBlockQuote from '@/components/AppBlockQuote'
 import AppSpacer from "@/components/AppSpacer";
+import AppModal from "@/components/AppModal";
 
 export default {
   components: {
@@ -80,7 +87,8 @@ export default {
     AppImage,
     AppSubtitle,
     AppSection,
-    AppBlockQuote
+    AppBlockQuote,
+    AppModal
   }
 }
 
