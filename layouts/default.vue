@@ -2,10 +2,13 @@
   <div>
     <TheHeader/>
     <div class="main">
-      <TheSidebar/>
-      <div class="content">
+      <TheSidebar v-if="isLeftSidebar"/>
+      <div
+        id="content"
+        class="content">
         <nuxt/>
       </div>
+      <TheProfileSidebar v-if="isRightSidebar"/>
     </div>
   </div>
 </template>
@@ -14,11 +17,21 @@
 
 import TheHeader from '@/components/Navigation/TheHeader'
 import TheSidebar from '@/components/Navigation/TheSidebar'
+import TheProfileSidebar from "../components/Navigation/TheProfileSidebar";
 
 export default {
   components: {
+    TheProfileSidebar,
     TheSidebar,
     TheHeader
+  },
+  computed: {
+    isLeftSidebar: function () {
+      return this.$store.getters.getLeftSidebar
+    },
+    isRightSidebar: function () {
+      return this.$store.getters.getRightSidebar
+    }
   }
 }
 
@@ -50,7 +63,10 @@ body {
   color: #333;
 }
 
-p {margin-bottom: 1.3em;}
+p {
+  margin-bottom: 1.3em;
+  text-align: justify;
+}
 
 h1, h2, h3, h4 {
   margin: 1.414em 0 0.5em;
@@ -89,6 +105,7 @@ small {font-size: 0.8em;}
   overflow: scroll;
   height: 100%;
   background-color: #f4f5f7;
+  padding: 0 20px 20px 20px;
 }
 
 </style>

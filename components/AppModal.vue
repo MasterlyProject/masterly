@@ -1,8 +1,16 @@
 <template>
-  <div class="app-modal">
-    <button @click="show">Button</button>
-    <modal :name="_name">
+  <div>
+    <button @click="show">
+      open Modal
+    </button>
+    <modal
+      :name="name"
+      resizable="true"
+      adaptive="true"
+      width="800px">
+      <div class="modal-container">
         <slot/>
+      </div>
     </modal>
   </div>
 </template>
@@ -11,31 +19,27 @@
 export default {
   name: "AppModal",
   props: {
-    _name: {
+    name: {
       type: String,
       required: true
     }
   },
-  computed: {
-  },
   methods: {
     show () {
-      this.$modal.show(this._name);
+      this.$modal.show(this.name)
     },
     hide () {
-      this.$modal.hide(this._name);
-    }
+      this.$modal.hide(this.name)
+    },
   }
 }
 </script>
 
 <style scoped>
 
-.block-quote {
-  padding: 10px 10px 10px 20px;
-  border-left: 5px solid;
-  opacity: 1;
-  margin-bottom: 10px;
+.modal-container {
+  padding: 40px;
+  margin: -20px;
 }
 
 </style>
