@@ -1,11 +1,26 @@
 <template>
   <div class="latex-container">
-    <div class="latex-code">
-      <textarea v-model="code"></textarea>
-    </div>
-    <div class="letex-render">
-      {{ code }}
-    </div>
+    <!--<div-->
+      <!--v-show="isCode"-->
+      <!--class="latex-code">-->
+      <!--<textarea-->
+        <!--id="input"-->
+        <!--@keyup="updateSize"-->
+        <!--v-model="code">-->
+      <!--</textarea>-->
+    <!--</div>-->
+    <!--<div-->
+      <!--@click="toggleCode"-->
+      <!--class="latex-render"-->
+      <!--v-katex="{-->
+        <!--expression: '\\begin{aligned}' + code + '\\end{aligned}',-->
+        <!--options: {-->
+          <!--throwOnError: false,-->
+          <!--displayMode: true-->
+        <!--}-->
+      <!--}"-->
+    <!--&gt;-->
+    <!--</div>-->
   </div>
 </template>
 
@@ -14,7 +29,17 @@ export default {
   name: "AppLatexRenderer",
   data () {
     return {
-      code: ''
+      code: '2x+8',
+      isCode: false
+    }
+  },
+  methods: {
+    updateSize() {
+      input.style.height = "1px"
+      input.style.height = ( 25 + input.scrollHeight ) + "px"
+    },
+    toggleCode() {
+      this.isCode = !this.isCode
     }
   }
 }
@@ -22,9 +47,29 @@ export default {
 
 <style lang="stylus" scoped>
 
-.latex-container
+.latex-code
   background-color #f4f5f7
   padding 20px
   width 100%
+  margin-bottom 20px
+
+.latex-code textarea
+  border none
+  font-size inherit
+  background none
+  resize none
+  overflow auto
+  margin-bottom -27px
+  outline none
+  width 100%
+  height 47px
+
+.latex-render
+  text-align center
+  cursor pointer
+
+.latex-render:hover
+  background-color #f4f5f7
 
 </style>
+

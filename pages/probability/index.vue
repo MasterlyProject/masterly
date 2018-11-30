@@ -30,9 +30,7 @@
       <AppSpacer space="20px"/>
 
       <AppVideo>
-        <AppImage width="medium">
-          <img src="@/assets/images/MethodsUnit1/CosineAndSineRules/cns_14_Supp_Cos.svg"/>
-        </AppImage>
+        <div id="box5" class="jxgbox1" style="width:700px; height:291px"></div>
       </AppVideo>
 
       <AppMathProof>
@@ -53,9 +51,20 @@
 
       </AppMathProof>
 
-      <div v-katex="'\\frac{a_i}{1+x}'"></div>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur dolorem earum nihil repellat similique! Assumenda distinctio eveniet non rerum sit.
+      </p>
 
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur dolorem earum nihil repellat similique! Assumenda distinctio eveniet non rerum sit.</p>
+      <div class="math">
+        <p>
+           3x + 4
+        </p>
+      </div>
+      <p class="math">
+        3x + 2
+      </p>
+      <p class="math">
+        6x + 4
+      </p>
 
       <AppLatexRenderer/>
 
@@ -73,6 +82,7 @@
       </AppImage>
 
     </AppSection>
+    <div v-html="scripts"></div>
   </div>
 </template>
 
@@ -90,8 +100,8 @@ import AppVideo from '@/components/AppVideo'
 import AppMathProof from "@/components/AppMathProof";
 import AppLatexRenderer from "@/components/AppLatexRenderer";
 
-
 export default {
+
   components: {
     AppLatexRenderer,
     AppMathProof,
@@ -104,6 +114,28 @@ export default {
     AppBlockQuote,
     AppModal,
     AppVideo
+  },
+  data: () => ({
+    scripts: "<script src='/scripts/interactives/mathMethodsUnit1/cosineAndSineRules/0.js'><\/script>"
+  }),
+  mounted() {
+    this.renderKatex()
+  },
+  methods: {
+    renderKatex() {
+      let elements = document.getElementsByClassName("math")
+      console.log(elements)
+      let len = elements.length
+      console.log(len)
+      let i
+      for (i = 0; i < len; i++) {
+        console.log(elements[i].innerText)
+        console.log(elements[i])
+        katex.render(elements[i].innerHTML, elements[i], {
+          throwOnError: false
+        })
+      }
+    }
   }
 }
 

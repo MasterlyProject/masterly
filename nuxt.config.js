@@ -1,7 +1,7 @@
 const pkg = require('./package')
 
 module.exports = {
-  mode: 'spa',
+  mode: 'universal',
 
   /*
   ** Headers of the page
@@ -14,10 +14,14 @@ module.exports = {
       { hid: 'description', name: 'description', content: pkg.description }
     ],
     script: [
+      { type: 'text/javascript',
+        src: 'http://jsxgraph.uni-bayreuth.de/distrib/jsxgraphcore.js'
+      }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-      { rel: 'stylesheet', href: 'https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/katex.min.css'}
+      { rel: 'stylesheet', href: 'https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/katex.min.css'},
+      { rel: 'stylesheet', href: 'http://jsxgraph.uni-bayreuth.de/distrib/jsxgraph.css'}
     ]
   },
 

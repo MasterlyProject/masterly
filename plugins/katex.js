@@ -1,4 +1,4 @@
-import VueKatex from 'vue-katex'
+import katex from 'katex'
 import Vue from 'vue'
 
-Vue.use(VueKatex)
+Vue.use(katex)
