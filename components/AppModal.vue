@@ -7,7 +7,8 @@
       :name="name"
       resizable="true"
       adaptive="true"
-      width="800px">
+      width="800px"
+    >
       <div class="modal-container">
         <slot/>
       </div>

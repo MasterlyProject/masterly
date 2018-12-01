@@ -5,7 +5,8 @@
       <TheSidebar v-if="isLeftSidebar"/>
       <div
         id="content"
-        class="content">
+        class="content"
+      >
         <nuxt/>
       </div>
       <TheProfileSidebar v-if="isRightSidebar"/>
@@ -17,7 +18,7 @@
 
 import TheHeader from '@/components/Navigation/TheHeader'
 import TheSidebar from '@/components/Navigation/TheSidebar'
-import TheProfileSidebar from "../components/Navigation/TheProfileSidebar";
+import TheProfileSidebar from "@/components/Navigation/TheProfileSidebar";
 
 export default {
   components: {
@@ -32,6 +33,9 @@ export default {
     isRightSidebar: function () {
       return this.$store.getters.getRightSidebar
     }
+  },
+  mounted() {
+    renderMathInElement(document.body)
   }
 }
 

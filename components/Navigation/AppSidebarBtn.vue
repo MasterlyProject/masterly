@@ -1,7 +1,8 @@
 <template>
   <div
     :style="_borderColor"
-    class="button">
+    class="button"
+  >
     <h5>{{ text }}</h5>
   </div>
 </template>
@@ -16,7 +17,8 @@ export default {
     },
     borderColor: {
       type: String,
-      required: false
+      required: false,
+      default: 'rgba(255, 255, 255, 0)'
     }
   },
   computed: {

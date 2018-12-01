@@ -1,6 +1,9 @@
 <template>
   <div>
-    <AppSection color="blue" title="Revision on Right Triangles">
+    <AppSection
+      color="blue"
+      title="Revision on Right Triangles"
+    >
       <AppSubtitle>
         The Right Trinagle
       </AppSubtitle>
@@ -11,7 +14,7 @@
       <AppColumns>
         <AppColumn>
           <AppImage>
-            <img src="@/assets/images/MethodsUnit1/CosineAndSineRules/cns_14_Supp_Cos.svg"/>
+            <img src="@/assets/images/MethodsUnit1/CosineAndSineRules/cns_14_Supp_Cos.svg">
           </AppImage>
         </AppColumn>
         <AppColumn>
@@ -30,7 +33,11 @@
       <AppSpacer space="20px"/>
 
       <AppVideo>
-        <div id="box5" class="jxgbox1" style="width:700px; height:291px"></div>
+        <div
+          id="box5"
+          class="jxgbox1"
+          style="width:700px; height:291px"
+        />
       </AppVideo>
 
       <AppMathProof>
@@ -56,11 +63,11 @@
 
       <div class="math">
         <p>
-           3x + 4
+          \( 3x + 4 \)
         </p>
       </div>
       <p class="math">
-        3x + 2
+        $$ 3x + 2 $$
       </p>
       <p class="math">
         6x + 4
@@ -69,20 +76,20 @@
       <AppLatexRenderer/>
 
       <AppImage width="large">
-        <img src="@/assets/images/MethodsUnit1/CosineAndSineRules/cns_14_Supp_Cos.svg"/>
+        <img src="@/assets/images/MethodsUnit1/CosineAndSineRules/cns_14_Supp_Cos.svg">
       </AppImage>
       <AppImage width="medium">
-        <img src="@/assets/images/MethodsUnit1/CosineAndSineRules/cns_14_Supp_Cos.svg"/>
+        <img src="@/assets/images/MethodsUnit1/CosineAndSineRules/cns_14_Supp_Cos.svg">
       </AppImage>
       <AppImage width="small">
-        <img src="@/assets/images/MethodsUnit1/CosineAndSineRules/cns_14_Supp_Cos.svg"/>
+        <img src="@/assets/images/MethodsUnit1/CosineAndSineRules/cns_14_Supp_Cos.svg">
       </AppImage>
       <AppImage width="100px">
-        <img src="@/assets/images/MethodsUnit1/CosineAndSineRules/cns_14_Supp_Cos.svg"/>
+        <img src="@/assets/images/MethodsUnit1/CosineAndSineRules/cns_14_Supp_Cos.svg">
       </AppImage>
 
     </AppSection>
-    <div v-html="scripts"></div>
+    <div v-html="scripts"/>
   </div>
 </template>
 
@@ -117,26 +124,7 @@ export default {
   },
   data: () => ({
     scripts: "<script src='/scripts/interactives/mathMethodsUnit1/cosineAndSineRules/0.js'><\/script>"
-  }),
-  mounted() {
-    this.renderKatex()
-  },
-  methods: {
-    renderKatex() {
-      let elements = document.getElementsByClassName("math")
-      console.log(elements)
-      let len = elements.length
-      console.log(len)
-      let i
-      for (i = 0; i < len; i++) {
-        console.log(elements[i].innerText)
-        console.log(elements[i])
-        katex.render(elements[i].innerHTML, elements[i], {
-          throwOnError: false
-        })
-      }
-    }
-  }
+  })
 }
 
 </script>

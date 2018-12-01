@@ -3,18 +3,19 @@
     <div
       class="drawer-toggle"
       @click="toggleLeftSidebar">
-      <div class="bar" />
-      <div class="bar" />
-      <div class="bar" />
+      <div class="bar"/>
+      <div class="bar"/>
+      <div class="bar"/>
     </div>
     <img src="@/static/masterlyLogo.png">
     <div class="spacer">
       <h5>{{ title }}</h5>
     </div>
     <img
-      @click="toggleRightSidebar"
       src="@/assets/images/Icons/profileIcon.svg"
-      class="profile-image"/>
+      class="profile-image"
+      @click="toggleRightSidebar"
+    >
   </header>
 </template>
 

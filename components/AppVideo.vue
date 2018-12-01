@@ -2,38 +2,42 @@
   <div class="container">
     <div
       v-if="styleId === 2"
-      class="modal-background">
-    </div>
+      class="modal-background"
+    />
     <div
       :class="{ minimise: (styleId === 1), modal: (styleId === 2)}"
       class="parent">
       <div
         :style="_container"
-        class="video-container">
+        class="video-container"
+      >
         <slot class="video">
           Add modal content
         </slot>
-        <script src="https://player.vimeo.com/api/player.js"></script>
+        <script src="https://player.vimeo.com/api/player.js"/>
       </div>
       <div
         :style="_strip"
         class="video-strip">
         <div
           v-if="styleId === 1"
+          class="btn"
           @click="minimise"
-          class="btn">
-          <img src="@/assets/images/Icons/maximise.svg"/>
+        >
+          <img src="@/assets/images/Icons/maximise.svg">
         </div>
         <div
           v-if="styleId !== 1"
+          class="btn"
           @click="minimise"
-          class="btn">
-          <img src="@/assets/images/Icons/minimise.svg"/>
+        >
+          <img src="@/assets/images/Icons/minimise.svg">
         </div>
         <div
+          class="btn"
           @click="modal"
-          class="btn">
-          <img src="@/assets/images/Icons/modal.svg"/>
+        >
+          <img src="@/assets/images/Icons/modal.svg">
         </div>
       </div>
     </div>

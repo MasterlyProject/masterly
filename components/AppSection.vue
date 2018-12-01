@@ -1,18 +1,26 @@
 <template>
-<section class="section" :style="sectionColor">
-  <h2>{{ title }}</h2>
-  <slot/>
-</section>
+  <section
+    :style="sectionColor"
+    class="section"
+  >
+    <h2>{{ title }}</h2>
+    <slot/>
+  </section>
 </template>
 
 <script>
 export default {
   name: 'AppSection',
   props: {
-    color: String,
+    color: {
+      type: String,
+      required: true,
+      default:'black'
+    },
     title: {
       type: String,
-      required: false
+      required: false,
+      default: 'Title'
     }
   },
   computed: {

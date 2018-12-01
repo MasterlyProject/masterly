@@ -1,26 +1,33 @@
 <template>
   <div
     :style="style"
-    class="proof-container">
-
+    class="proof-container"
+  >
     <h5
-      @click="toggleProof"
+      :style="textStyle"
       class="proof-text"
-      :style="textStyle">
-      {{proofText}}
+      @click="toggleProof"
+    >
+      {{ proofText }}
     </h5>
     <slot
       v-if="!isOpen"
-      name = "blockEqu"
-    >place a blockquote here</slot>
+      name="equation"
+    >
+      place a block quote here
+    </slot>
     <div
       v-show="isOpen"
-      class="proof">
+      class="proof"
+    >
       <slot/>
     </div>
     <h5
       v-show="isOpen"
-      class="proof-qed">q.e.d</h5>
+      class="proof-qed"
+    >
+      q.e.d
+    </h5>
   </div>
 </template>
 

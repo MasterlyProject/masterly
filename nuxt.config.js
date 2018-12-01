@@ -14,13 +14,27 @@ module.exports = {
       { hid: 'description', name: 'description', content: pkg.description }
     ],
     script: [
-      { type: 'text/javascript',
-        src: 'http://jsxgraph.uni-bayreuth.de/distrib/jsxgraphcore.js'
+      {
+        defer: true,
+        src: 'https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/katex.min.js',
+        integrity: 'sha384-K3vbOmF2BtaVai+Qk37uypf7VrgBubhQreNQe9aGsz9lB63dIFiQVlJbr92dw2Lx',
+        crossOrigin: 'anonymous'
+      },
+      {
+        defer: true,
+        src: 'https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/contrib/auto-render.min.js',
+        integrity: 'sha384-kmZOZB5ObwgQnS/DuDg6TScgOiWWBiVt0plIRkZCmE6rDZGrEOQeHM5PcHi+nyqe',
+        crossOrigin: 'anonymous'
       }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-      { rel: 'stylesheet', href: 'https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/katex.min.css'},
+      {
+        rel: 'stylesheet',
+        href: 'https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/katex.min.css',
+        integrity: 'sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y',
+        crossOrigin: 'anonymous'
+      },
       { rel: 'stylesheet', href: 'http://jsxgraph.uni-bayreuth.de/distrib/jsxgraph.css'}
     ]
   },
@@ -40,7 +54,6 @@ module.exports = {
   ** Plugins to load before mounting the App
   */
   plugins: [
-    {ssr: false, src: '~/plugins/katex.js'}
   ],
 
   /*

@@ -1,5 +1,8 @@
 <template>
-  <div class="block-quote" :style="_color">
+  <div
+    :style="_color"
+    class="block-quote"
+  >
     <slot/>
   </div>
 </template>

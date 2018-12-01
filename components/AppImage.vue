@@ -12,7 +12,8 @@ export default {
   props: {
     width: {
       type: String,
-      required: false
+      required: false,
+      default: 'medium'
     }
   },
   computed: {

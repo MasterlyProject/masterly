@@ -1,24 +1,24 @@
 <template>
   <div class="latex-container">
     <!--<div-->
-      <!--v-show="isCode"-->
-      <!--class="latex-code">-->
-      <!--<textarea-->
-        <!--id="input"-->
-        <!--@keyup="updateSize"-->
-        <!--v-model="code">-->
-      <!--</textarea>-->
+    <!--v-show="isCode"-->
+    <!--class="latex-code">-->
+    <!--<textarea-->
+    <!--id="input"-->
+    <!--@keyup="updateSize"-->
+    <!--v-model="code">-->
+    <!--</textarea>-->
     <!--</div>-->
     <!--<div-->
-      <!--@click="toggleCode"-->
-      <!--class="latex-render"-->
-      <!--v-katex="{-->
-        <!--expression: '\\begin{aligned}' + code + '\\end{aligned}',-->
-        <!--options: {-->
-          <!--throwOnError: false,-->
-          <!--displayMode: true-->
-        <!--}-->
-      <!--}"-->
+    <!--@click="toggleCode"-->
+    <!--class="latex-render"-->
+    <!--v-katex="{-->
+    <!--expression: '\\begin{aligned}' + code + '\\end{aligned}',-->
+    <!--options: {-->
+    <!--throwOnError: false,-->
+    <!--displayMode: true-->
+    <!--}-->
+    <!--}"-->
     <!--&gt;-->
     <!--</div>-->
   </div>

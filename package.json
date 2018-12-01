@@ -13,7 +13,6 @@
     "precommit": "npm run lint"
   },
   "dependencies": {
-    "katex": "^0.10.0",
     "nuxt": "^1.4.2",
     "vue-scrollto": "^2.13.0"
   },
