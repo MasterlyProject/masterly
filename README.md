@@ -2,8 +2,6 @@
 
 > Web app for the online learning of high school mathematics
 
-[TOC]
-
 ## Build Setup
 
 ``` bash
@@ -135,7 +133,7 @@ It is recommended to save each javascript file within the given directory as a l
 
    ```html
    <AppInteractive
-   	name="a"
+     name="a"
      src="/scripts/interactives/mathMethodsUnit1/radianMeasure/a.js"
      width="700px"
      height="300px"
