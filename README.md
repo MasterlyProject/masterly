@@ -1,6 +1,8 @@
-# Masterly_Simple_App
+# Masterly Web App
 
-> My terrific Nuxt.js project
+> Web app for the online learning of high school mathematics
+
+[TOC]
 
 ## Build Setup
 
@@ -19,4 +21,124 @@ $ npm start
 $ npm run generate
 ```
 
-For detailed explanation on how things work, checkout [Nuxt.js docs](https://nuxtjs.org).
+## Theme Colours
+
+| Color         | RGB            | Hex     |
+| ------------- | -------------- | ------- |
+| **Red**       | (236, 109, 95) | #ec6d5f |
+| **Green**     | (39, 201, 184) | #27c9b8 |
+| **Blue**      | (44, 170, 202) | #2caaca |
+| **Dark Navy** | (39, 50, 58)   | #27323a |
+
+## App Components
+
+### AppBlockQuote
+
+#### Properties
+
+| Name  | Required | Type   | Default | Description                                                  |
+| ----- | -------- | ------ | ------- | ------------------------------------------------------------ |
+| color | false    | String | '#ccc'  | The colour of the Block Quotes border. This colour will also be used at 20% opacity for the background |
+
+### AppColumns
+
+This is a wrapper component for **AppColumn**, so always wrap columns with this component! For example:
+
+```html
+<AppColumns>
+  <AppColumn>
+    <p>
+      Column 1
+    </p>
+  </AppColumn>
+  <AppColumn>
+    <p>
+      Column 2
+    </p>
+  </AppColumn>
+</AppColumns>
+```
+
+#### Properties
+
+This component currently takes no properties, however, this should be soon modified for options such as centring, padding and margin.
+
+### AppColumn
+
+This component should always be used wrapped inside the **AppColumns** component. If you want to add ***n*** amount of columns, simply add ***n*** amount of **AppColumn** components inside **AppColumns**.
+
+#### Properties
+
+This component currently takes no properties, however, this should be soon modified for options such as padding, margin and breakpoints.
+
+### AppImage
+
+App image is a wrapper component for images. It will always centre the image it wraps. For example:
+
+```html
+<AppImage>
+  <img src='/path_to_image'>
+</AppImage>
+```
+
+#### Properties
+
+| Name  | Required | Type   | Default  | Description                                                  |
+| ----- | -------- | ------ | -------- | ------------------------------------------------------------ |
+| width | false    | String | 'medium' | The width of the image, more specifically it is the max-width of the image as by default the image will be responsive and shrink with the browser window. **Note:** `'small'`, `'medium'`, `'large'`  can be used to define width as well as normal width values. `'small'=240px`, `'medium'=360px` and `'large'=540px` |
+
+### AppSection
+
+#### Properties
+
+To keep the section responsive it is always recommended to keep `width='100%'` and limit the width of the section using `maxWidth`
+
+| Name     | Required | Type   | Default | Description                           |
+| -------- | -------- | ------ | ------- | ------------------------------------- |
+| color    | false    | String | 'white' | The colour of the sections top border |
+| title    | false    | String | 'Title' | The title of the section              |
+| width    | false    | String | '100%'  | The width of the section              |
+| maxWidth | false    | String | '900px' | The maximum width the section can be  |
+
+### AppInteractive
+
+This is a component to embed interactive **JSX Graphs**. The javascript code for these interactive's must be stored in the appropriate path in the **static** directory to prevent Webpack from working on it. 
+
+It is recommended to save each javascript file within the given directory as a letter in alphabetical order. For example:
+
+```html
+/scripts/interactives/mathMethodsUnit1/radianMeasure/
+|- a.js
+|- b.js
+|- c.js
+```
+
+#### Properties
+
+| Name   | Required | Type    | Default | Description                                                  |
+| ------ | -------- | ------- | ------- | ------------------------------------------------------------ |
+| name   | true     | String  |         | The name of your interactive. **This must be unique and must match the name of the javascript file containing the interactive!** |
+| src    | true     | String  |         | The path to the interactive you are using                    |
+| width  | false    | String  | '700px' | The width of the interactive                                 |
+| height | false    | String  | '300px' | The height of the interactive                                |
+| center | false    | Boolean | true    | Whether the interactive is to centred                        |
+
+#### Usage
+
+1. Make sure you have the javascript file named correctly and stored in the appropriate directory within `static/`. For example, for the first interactive within the Radian Measure playlist:
+
+   ```html
+   /scripts/interactives/mathMethodsUnit1/radianMeasure/a.js
+   ```
+
+2. Use the component as follows (**note:** **`name`** must match the name of the javascript file in **`src`**):
+
+   ```html
+   <AppInteractive
+   	name="a"
+     src="/scripts/interactives/mathMethodsUnit1/radianMeasure/a.js"
+     width="700px"
+     height="300px"
+   />
+   ```
+

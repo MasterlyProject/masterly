@@ -1,6 +1,3 @@
-
-console.log("here")
-
 JXG.Options.text.fontSize = '10px';
 JXG.Options.text.cssDefaultStyle = 'font-family: Times New Roman';
 JXG.Options.text.HighlightCssDefaultStyle = 'font-family: Times New Roman';
@@ -36,46 +33,38 @@ JXG.Options.slider.ticks.strokeWidth = 2;
 JXG.Options.slider.ticks.highlightstrokeColor = '#2caaca';
 JXG.Options.slider.ticks.highlightstrokeWidth = 2;
 
-f = JXG.JSXGraph.initBoard('box5', {
+a = JXG.JSXGraph.initBoard('boxa', {
   grid: false,
   showCopyright: false,
   showNavigation: false,
   axis: false,
   boundingbox: [-1.3, 1.5, 5.91, -1.5]
 });
-f.suspendUpdate();
+a.suspendUpdate();
 
 var p1, p2, p3,p4, c, a3, s3, a2;
 
-p1 = f.create('point', [0, 0], {
+p1 = a.create('point', [0, 0], {
   fixed: true,
   name: ''
 });
-p2 = f.create('point', [1, 0], {
+p2 = a.create('point', [1, 0], {
   fixed: true,
   name: ''
 });
-p3 = f.create('point', [0, 1], {
+p3 = a.create('point', [0, 1], {
   name: ''
 });
 
-c1 = f.create('circle', [p1, p2]);
+c1 = a.create('circle', [p1, p2]);
 
-a3 = f.create('angle', [p2, p1, p3], {
-  radius: 1,
-  orthoType: 'sector',
-  name: ' ',
-  fillColor: '#fff',
-  highlightFillColor: '#fff'
-});
-
-a3 = f.create('angle', [p2, p1, p3], {
+a3 = a.create('angle', [p2, p1, p3], {
   radius: 0.3,
   orthoType: 'sector',
   name: '\\(\\theta^{\\circ}\\)'
 });
 
-s3 = f.create('slider', [
+s3 = a.create('slider', [
   [-0.6, -0.5],
   [0.4, -0.5],
   [0, 57.6, 360]
@@ -85,7 +74,7 @@ a3.setAngle(function() {
   return s3.Value() * Math.PI / 180;
 });
 
-f.create('segment', [
+a.create('segment', [
   [function() {
     return Math.cos(s3.Value() * Math.PI / 180)
   }, function() {
@@ -102,7 +91,7 @@ f.create('segment', [
   dash: '1',
 });
 
-f.create('segment', [
+a.create('segment', [
   [function() {
     return Math.cos(s3.Value() * Math.PI / 180)
   }, 0],
@@ -117,7 +106,7 @@ f.create('segment', [
   dash: '1',
 });
 
-f.create('segment', [
+a.create('segment', [
   [function() {
     return (s3.Value() * 3.78 / 360) + 1.41
   }, 0],
@@ -132,7 +121,7 @@ f.create('segment', [
   dash: '1',
 });
 
-f.create('segment', [
+a.create('segment', [
   [1.41, 0],
   [5.41, 0]
 ], {
@@ -141,7 +130,7 @@ f.create('segment', [
   fixed: true
 });
 
-f.create('segment', [
+a.create('segment', [
   [1.41, 1.2],
   [1.41, -1.2]
 ], {
@@ -150,7 +139,7 @@ f.create('segment', [
   fixed: true
 });
 
-f.create('functiongraph', [function(x) {
+a.create('functiongraph', [function(x) {
   return 1 * Math.sin(1.658 * x - 2.33)
 }, 1.41, function() {
   return (s3.Value() * 3.78 / 360) + 1.41
@@ -161,7 +150,7 @@ f.create('functiongraph', [function(x) {
   highlightStrokeOpacity: 0.5
 });
 
-p4 = f.create('point', [1.41, 1.2], {
+p4 = a.create('point', [1.41, 1.2], {
   name: '\\(y\\)',
   face: 'a',
   fixed: true,
@@ -171,7 +160,7 @@ p4 = f.create('point', [1.41, 1.2], {
   highlightFillColor: '#000',
 });
 
-f.create('point', [1.41, -1.2], {
+a.create('point', [1.41, -1.2], {
   name: '',
   face: 'v',
   fixed: true,
@@ -181,7 +170,7 @@ f.create('point', [1.41, -1.2], {
   highlightFillColor: '#000',
 });
 
-f.create('point', [5.41, 0], {
+a.create('point', [5.41, 0], {
   name: '\\(\\theta^{\\circ}\\)',
   face: '>',
   fixed: true,
@@ -191,7 +180,7 @@ f.create('point', [5.41, 0], {
   highlightFillColor: '#000',
 });
 
-f.create('segment', [
+a.create('segment', [
   [1.37, 1],
   [1.45, 1]
 ], {
@@ -200,7 +189,7 @@ f.create('segment', [
   fixed: true
 });
 
-f.create('segment', [
+a.create('segment', [
   [1.37, -1],
   [1.45, -1]
 ], {
@@ -209,19 +198,19 @@ f.create('segment', [
   fixed: true
 });
 
-f.create('text', [1.28, 1, '1'], {
+a.create('text', [1.28, 1, '1'], {
   strokeColor: '#000',
   fontSize: '16px',
   fixed: true
 });
 
-f.create('text', [1.22, -1, '-1'], {
+a.create('text', [1.22, -1, '-1'], {
   strokeColor: '#000',
   fontSize: '16px',
   fixed: true
 });
 
-f.create('segment', [
+a.create('segment', [
   [1.41+(3.78/4), 0.04],
   [1.41+(3.78/4), -0.055]
 ], {
@@ -230,7 +219,7 @@ f.create('segment', [
   fixed: true
 });
 
-f.create('segment', [
+a.create('segment', [
   [1.41+(3.78/2), 0.04],
   [1.41+(3.78/2), -0.055]
 ], {
@@ -239,7 +228,7 @@ f.create('segment', [
   fixed: true
 });
 
-f.create('segment', [
+a.create('segment', [
   [1.41+(3*3.78/4), 0.04],
   [1.41+(3*3.78/4), -0.055]
 ], {
@@ -248,7 +237,7 @@ f.create('segment', [
   fixed: true
 });
 
-f.create('segment', [
+a.create('segment', [
   [1.41+3.78, 0.04],
   [1.41+3.78, -0.055]
 ], {
@@ -257,30 +246,30 @@ f.create('segment', [
   fixed: true
 });
 
-f.create('text', [1.34+(3.78/4), -0.15, '90'], {
+a.create('text', [1.34+(3.78/4), -0.15, '90'], {
   strokeColor: '#000',
   fontSize: '16px',
   fixed: true
 });
 
-f.create('text', [1.28+(3.78/2), -0.15, '180'], {
+a.create('text', [1.28+(3.78/2), -0.15, '180'], {
   strokeColor: '#000',
   fontSize: '16px',
   fixed: true
 });
 
-f.create('text', [1.28+(3*3.78/4), -0.15, '270'], {
+a.create('text', [1.28+(3*3.78/4), -0.15, '270'], {
   strokeColor: '#000',
   fontSize: '16px',
   fixed: true
 });
 
-f.create('text', [1.28+3.78, -0.15, '360'], {
+a.create('text', [1.28+3.78, -0.15, '360'], {
   strokeColor: '#000',
   fontSize: '16px',
   fixed: true
 });
 
-f.update();
+a.update();
 
-f.unsuspendUpdate();
+a.unsuspendUpdate();

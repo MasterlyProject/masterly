@@ -13,21 +13,15 @@
     <slot
       v-if="!isOpen"
       name="equation"
-    >
-      place a block quote here
-    </slot>
-    <div
-      v-show="isOpen"
-      class="proof"
-    >
-      <slot/>
+    />
+    <div v-show="isOpen">
+      <div class="proof">
+        <slot/>
+      </div>
+      <h5 class="proof-qed">
+        q.e.d
+      </h5>
     </div>
-    <h5
-      v-show="isOpen"
-      class="proof-qed"
-    >
-      q.e.d
-    </h5>
   </div>
 </template>
 
@@ -40,8 +34,15 @@ export default {
       style: '',
       textStyle: {
         'width': '100px'
-      },
-      proofText: 'show proof'
+      }
+    }
+  },
+  computed: {
+    proofText: function () {
+      if (this.isOpen) {
+        return 'hide proof'
+      }
+      return 'show proof'
     }
   },
   methods: {
@@ -55,14 +56,12 @@ export default {
         this.textStyle = {
           'width': '85px'
         }
-        this.proofText = 'hide proof'
       }
       else {
         this.style = ''
         this.textStyle = {
           'width': '100px'
         }
-        this.proofText = 'show proof'
       }
     }
   }

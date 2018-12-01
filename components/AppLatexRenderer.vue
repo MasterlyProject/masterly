@@ -1,26 +1,22 @@
 <template>
   <div class="latex-container">
-    <!--<div-->
-    <!--v-show="isCode"-->
-    <!--class="latex-code">-->
-    <!--<textarea-->
-    <!--id="input"-->
-    <!--@keyup="updateSize"-->
-    <!--v-model="code">-->
-    <!--</textarea>-->
-    <!--</div>-->
-    <!--<div-->
-    <!--@click="toggleCode"-->
-    <!--class="latex-render"-->
-    <!--v-katex="{-->
-    <!--expression: '\\begin{aligned}' + code + '\\end{aligned}',-->
-    <!--options: {-->
-    <!--throwOnError: false,-->
-    <!--displayMode: true-->
-    <!--}-->
-    <!--}"-->
-    <!--&gt;-->
-    <!--</div>-->
+    <div
+      v-show="isCode"
+      class="latex-code"
+    >
+      <textarea
+        id="input"
+        v-model="code"
+        @keyup="updateRender"
+      />
+    </div>
+    <p
+      id="rendered-latex"
+      class="latex-render"
+      @click="toggleCode"
+    >
+      {{ code }}
+    </p>
   </div>
 </template>
 
@@ -29,11 +25,15 @@ export default {
   name: "AppLatexRenderer",
   data () {
     return {
-      code: '2x+8',
+      code: '$$ 2x+8 $$',
       isCode: false
     }
   },
   methods: {
+    updateRender() {
+      this.updateSize()
+      // Render Math Function
+    },
     updateSize() {
       input.style.height = "1px"
       input.style.height = ( 25 + input.scrollHeight ) + "px"

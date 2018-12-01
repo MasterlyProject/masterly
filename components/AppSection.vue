@@ -1,6 +1,6 @@
 <template>
   <section
-    :style="sectionColor"
+    :style="sectionStyle"
     class="section"
   >
     <h2>{{ title }}</h2>
@@ -14,18 +14,27 @@ export default {
   props: {
     color: {
       type: String,
-      required: true,
-      default:'black'
+      required: false,
+      default:'white'
     },
     title: {
       type: String,
       required: false,
       default: 'Title'
+    },
+    width: {
+      type: String,
+      required: false,
+      default: '100%'
+    },
+    maxWidth: {
+      type: String,
+      required: false,
+      default: '900px'
     }
   },
   computed: {
-    sectionColor() {
-
+    sectionStyle() {
       var color = this.color
 
       switch(color) {
@@ -36,9 +45,10 @@ export default {
         case  "blue": color = '#2caaca'
           break
       }
-
       return {
-        'border-top-color': color
+        'border-top-color': color,
+        'width': this.width,
+        'max-width': this.maxWidth
       }
     }
   }
@@ -48,8 +58,6 @@ export default {
 <style lang="stylus" scoped>
 
 .section
-  max-width 900px
-  width 100%
   margin 40px auto
   padding 0 40px 20px 40px
   box-shadow 0 0 10px rgba(0, 0, 0, 0.05);

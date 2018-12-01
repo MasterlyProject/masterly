@@ -32,17 +32,17 @@
 
       <AppSpacer space="20px"/>
 
-      <AppVideo>
-        <div
-          id="box5"
-          class="jxgbox1"
-          style="width:700px; height:291px"
+      <AppModal>
+        <AppInteractive
+          name="a"
+          src="/scripts/interactives/mathMethodsUnit1/cosineAndSineRules/a.js"
         />
-      </AppVideo>
+      </AppModal>
+
 
       <AppMathProof>
 
-        <template slot="blockEqu">
+        <template slot="equation">
           <AppBlockQuote color="blue">
             Yay
           </AppBlockQuote>
@@ -72,8 +72,9 @@
       <p class="math">
         6x + 4
       </p>
-
-      <AppLatexRenderer/>
+      <no-ssr>
+        <AppLatexRenderer/>
+      </no-ssr>
 
       <AppImage width="large">
         <img src="@/assets/images/MethodsUnit1/CosineAndSineRules/cns_14_Supp_Cos.svg">
@@ -89,7 +90,6 @@
       </AppImage>
 
     </AppSection>
-    <div v-html="scripts"/>
   </div>
 </template>
 
@@ -103,13 +103,14 @@ import AppColumn from "@/components/AppColumn";
 import AppBlockQuote from '@/components/AppBlockQuote'
 import AppSpacer from "@/components/AppSpacer";
 import AppModal from '@/components/AppModal'
-import AppVideo from '@/components/AppVideo'
 import AppMathProof from "@/components/AppMathProof";
 import AppLatexRenderer from "@/components/AppLatexRenderer";
+import AppInteractive from "@/components/AppInteractive";
 
 export default {
 
   components: {
+    AppInteractive,
     AppLatexRenderer,
     AppMathProof,
     AppSpacer,
@@ -119,12 +120,11 @@ export default {
     AppSubtitle,
     AppSection,
     AppBlockQuote,
-    AppModal,
-    AppVideo
+    AppModal
   },
-  data: () => ({
-    scripts: "<script src='/scripts/interactives/mathMethodsUnit1/cosineAndSineRules/0.js'><\/script>"
-  })
+  mounted() {
+    renderMathInElement(document.body)
+  }
 }
 
 </script>

@@ -25,6 +25,9 @@ module.exports = {
         src: 'https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/contrib/auto-render.min.js',
         integrity: 'sha384-kmZOZB5ObwgQnS/DuDg6TScgOiWWBiVt0plIRkZCmE6rDZGrEOQeHM5PcHi+nyqe',
         crossOrigin: 'anonymous'
+      },
+      {
+        src: 'https://cdnjs.cloudflare.com/ajax/libs/jsxgraph/1.3.5/jsxgraphcore.js'
       }
     ],
     link: [
@@ -35,7 +38,7 @@ module.exports = {
         integrity: 'sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y',
         crossOrigin: 'anonymous'
       },
-      { rel: 'stylesheet', href: 'http://jsxgraph.uni-bayreuth.de/distrib/jsxgraph.css'}
+      { rel: 'stylesheet', href: 'https://cdnjs.cloudflare.com/ajax/libs/jsxgraph/1.3.5/jsxgraph.css'}
     ]
   },
 

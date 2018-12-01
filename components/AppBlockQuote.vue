@@ -13,7 +13,8 @@ export default {
   props: {
     color: {
       type: String,
-      required: true
+      required: false,
+      default: '#ccc'
     }
   },
   computed: {
