@@ -54,7 +54,7 @@ mounted () {
 
 ```html
 <AppBlockQuote color="blue">
-  Block quote text goes here! (note: no p tags)
+  <!-- BLOCK QUOTE CONTENT GOES HERE -->
 </AppBlockQuote>
 ```
 
@@ -128,8 +128,8 @@ App section is a wrapper component, so use as follow:
 
 ```html
 <AppSection
-	title="Section Title"
-	color="blue"
+  title="Section Title"
+  color="blue"
 >
   <!-- SECTION CONTENT GOES HERE -->
 </AppSection>
@@ -171,7 +171,7 @@ It is recommended to save each javascript file within the given directory as a l
    ```html
    <AppInteractive
      :center="true"
-   	name="a"
+     name="a"
      src="/scripts/interactives/mathMethodsUnit1/radianMeasure/a.js"
      width="700px"
      height="300px"
@@ -183,7 +183,7 @@ It is recommended to save each javascript file within the given directory as a l
    ```javascript
    /* ===================
       JXG OPTIONS GO HERE
-   */ ===================
+      =================== */
    
    // INIT JSX GRAPH BOARD
    a = JXG.JSXGraph.initBoard('boxa', { // NOTE: 'a' AND 'boxa' MATCH name FROM ABOVE
@@ -196,7 +196,7 @@ It is recommended to save each javascript file within the given directory as a l
    
    /* ===========================
       METHODS ON OBJECT a GO HERE
-   */ ===========================
+      =========================== */
    ```
 
 ### AppModal
@@ -224,7 +224,7 @@ AppModal is a wrapper component, so use as follows:
 
 ```html 
 <AppModal
-	:mini-player="false"
+  :mini-player="false"
   modal-max-width="500px"
 >
   <!-- MODAL CONTENT GOES HERE -->
@@ -250,7 +250,7 @@ AppVideo is a component for embedding **Vimeo videos**.
 
 ```html
 <AppVideo
-	video-id="204135196"
+  video-id="204135196"
   color="blue"
 />
 ```
