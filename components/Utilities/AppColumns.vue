@@ -1,21 +1,40 @@
 <template>
-  <div class="columns">
+  <div
+    :style="style"
+    class="columns"
+  >
     <slot/>
   </div>
 </template>
 
 <script>
 export default {
-  name: "AppColumns"
+  name: "AppColumns",
+  props: {
+    width: {
+      type: String,
+      required: false,
+      default: '100%'
+    }
+  },
+  computed: {
+    style: function () {
+      return {
+        'max-width': this.width,
+      }
+    }
+  }
 }
 </script>
 
 <style scoped>
 
 .columns {
+  background-color: #7f828b;
+  width: calc(100% + 20px);
   display: flex;
   flex-flow: row wrap;
-  align-items: center;
+  margin: 0 auto
 }
 
 </style>

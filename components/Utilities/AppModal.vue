@@ -15,7 +15,6 @@
         <slot class="video">
           Add modal content
         </slot>
-        <script src="https://player.vimeo.com/api/player.js"/>
       </div>
       <div
         v-if="miniPlayer || modal"

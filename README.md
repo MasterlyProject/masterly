@@ -75,7 +75,22 @@ This is a wrapper component for **AppColumn**, so always wrap columns with this 
 
 #### Properties
 
-This component currently takes no properties, however, this should be soon modified for options such as centring, padding and margin.
+| Name  | Required | Type   | Default | Description                                |
+| ----- | -------- | ------ | ------- | ------------------------------------------ |
+| width | false    | String | '100%'  | Defines the width of the column container. |
+
+#### Usage
+
+```html
+<AppColumns width="400px">
+  <AppColumn>
+    <!-- COLUMN 1 GOES HERE -->
+  </AppColumn>
+  <AppColumn>
+    <!-- COLUMN 2 GOES HERE -->
+  </AppColumn>
+</AppColumns>
+```
 
 ### AppColumn
 
@@ -83,7 +98,35 @@ This component should always be used wrapped inside the **AppColumns** component
 
 #### Properties
 
-This component currently takes no properties, however, this should be soon modified for options such as padding, margin and breakpoints.
+| Name  | Required | Type   | Default  | Description                                                  |
+| ----- | -------- | ------ | -------- | ------------------------------------------------------------ |
+| align | false    | String | 'center' | This vertically aligns the column, there are **only** 3 options: **`start`**: aligns the column at the top, **`center`**: aligns the column in the centre and **`end`**: aligns the column at the bottom. |
+| width | false    | String | '200px'  | The initial width of the column (flex-basis). This will also be the breakpoint (i.e. the column can never become smaller than this width, however can grow to become bigger in order to fit the container) |
+
+#### Usage
+
+```html
+<AppColumns>
+  <AppColumn
+    align="start"
+    width="300px"
+  >
+    <!-- COLUMN 1 GOES HERE -->
+  </AppColumn>
+  <AppColumn
+    align="center"
+    width="400px"
+  >
+    <!-- COLUMN 2 GOES HERE -->
+  </AppColumn>
+  <AppColumn
+    align="end"
+    width="250px"
+  >
+    <!-- COLUMN 3 GOES HERE -->
+  </AppColumn>
+</AppColumns>
+```
 
 ### AppImage
 

@@ -17,6 +17,15 @@
         />
       </AppModal>
 
+      <AppColumns>
+        <AppColumn>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A ad animi consequuntur deleniti dolore illo iste iusto maxime recusandae vel?</p>
+        </AppColumn>
+        <AppColumn>
+          <p>Lorem ipsum dolor</p>
+        </AppColumn>
+      </AppColumns>
+
       <AppInteractive
         name="a"
         src="/scripts/interactives/mathMethodsUnit1/cosineAndSineRules/a.js"
@@ -38,6 +47,9 @@ import AppSubtitle from '@/components/Utilities/AppSubtitle'
 import AppModal from '@/components/Utilities/AppModal'
 import AppInteractive from '@/components/Utilities/AppInteractive'
 import AppVideo from '@/components/Utilities/AppVideo'
+import AppColumns from '@/components/Utilities/AppColumns'
+import AppColumn from '@/components/Utilities/AppColumn'
+
 
 export default {
   components: {
@@ -45,7 +57,9 @@ export default {
     AppSection,
     AppModal,
     AppInteractive,
-    AppVideo
+    AppVideo,
+    AppColumns,
+    AppColumn
   },
   mounted () {
     renderMathInElement(document.getElementById("content"))

@@ -109,7 +109,7 @@ small {font-size: 0.8em;}
   overflow: scroll;
   height: 100%;
   background-color: #f4f5f7;
-  padding: 0 20px 20px 20px;
+  padding: 0 20px 60px 20px;
 }
 
 </style>
