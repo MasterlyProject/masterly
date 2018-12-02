@@ -183,7 +183,7 @@ It is recommended to save each javascript file within the given directory as a l
    ```javascript
    /* ===================
       JXG OPTIONS GO HERE
-   */ ===================
+      =================== */
    
    // INIT JSX GRAPH BOARD
    a = JXG.JSXGraph.initBoard('boxa', { // NOTE: 'a' AND 'boxa' MATCH name FROM ABOVE
@@ -196,7 +196,7 @@ It is recommended to save each javascript file within the given directory as a l
    
    /* ===========================
       METHODS ON OBJECT a GO HERE
-   */ ===========================
+      =========================== */
    ```
 
 ### AppModal
