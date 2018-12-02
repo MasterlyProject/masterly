@@ -2,8 +2,6 @@
 
 > Web app for the online learning of high school mathematics
 
-[TOC]
-
 ## Build Setup
 
 ``` bash
@@ -130,8 +128,8 @@ App section is a wrapper component, so use as follow:
 
 ```html
 <AppSection
-	title="Section Title"
-	color="blue"
+  title="Section Title"
+  color="blue"
 >
   <!-- SECTION CONTENT GOES HERE -->
 </AppSection>
@@ -173,7 +171,7 @@ It is recommended to save each javascript file within the given directory as a l
    ```html
    <AppInteractive
      :center="true"
-   	name="a"
+     name="a"
      src="/scripts/interactives/mathMethodsUnit1/radianMeasure/a.js"
      width="700px"
      height="300px"
@@ -226,7 +224,7 @@ AppModal is a wrapper component, so use as follows:
 
 ```html 
 <AppModal
-	:mini-player="false"
+  :mini-player="false"
   modal-max-width="500px"
 >
   <!-- MODAL CONTENT GOES HERE -->
@@ -252,7 +250,7 @@ AppVideo is a component for embedding **Vimeo videos**.
 
 ```html
 <AppVideo
-	video-id="204135196"
+  video-id="204135196"
   color="blue"
 />
 ```
