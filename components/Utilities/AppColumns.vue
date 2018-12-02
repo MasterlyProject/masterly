@@ -30,7 +30,6 @@ export default {
 <style scoped>
 
 .columns {
-  background-color: #7f828b;
   width: calc(100% + 20px);
   display: flex;
   flex-flow: row wrap;

@@ -44,7 +44,6 @@ export default {
 <style scoped>
 
 .column {
-  background-color: limegreen;
   flex: 1 1;
   margin: 0 10px;
 }
