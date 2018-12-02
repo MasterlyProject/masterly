@@ -34,8 +34,8 @@ export default {
       return this.$store.getters.getRightSidebar
     }
   },
-  mounted() {
-    renderMathInElement(document.body)
+  mounted () {
+    renderMathInElement(document.getElementById("content"))
   }
 }
 

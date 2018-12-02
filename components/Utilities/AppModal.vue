@@ -69,12 +69,32 @@ export default {
     width: {
       type: String,
       required: false,
-      default: 'auto'
+      default: '100%'
     },
     maxWidth: {
       type: String,
       required: false,
-      default: 'auto'
+      default: '100%'
+    },
+    miniPlayerWidth: {
+      type: String,
+      required: false,
+      default: '100%'
+    },
+    miniPlayerMaxWidth: {
+      type: String,
+      required: false,
+      default: '450px'
+    },
+    modalWidth: {
+      type: String,
+      required: false,
+      default: '100%'
+    },
+    modalMaxWidth: {
+      type: String,
+      required: false,
+      default: '900px'
     },
     center: {
       type: Boolean,
@@ -115,12 +135,26 @@ export default {
     },
     modalStyle: function () {
       let margin = '0'
+      let maxWidth
+      let width
       if (this.center) {
         margin = '0 auto'
       }
+      if (this.styleId === 0) {
+        width = this.width
+        maxWidth = this.maxWidth
+      }
+      else if (this.styleId === 1) {
+        width = this.miniPlayerWidth
+        maxWidth = this.miniPlayerMaxWidth
+      }
+      else if (this.styleId === 2) {
+        width = this.modalWidth
+        maxWidth = this.modalMaxWidth
+      }
       return {
-        'width': this.width,
-        'max-width': this.maxWidth,
+        'width': width,
+        'max-width': maxWidth,
         'margin': margin
       }
     }
@@ -172,7 +206,6 @@ export default {
   position: fixed;
   bottom: 0;
   left: 0;
-  width: 450px;
   padding: 0;
 }
 
@@ -183,7 +216,6 @@ export default {
   right: 0;
   top: 60px;
   margin: 0 auto;
-  max-width: 900px;
   padding: 0;
 }
 

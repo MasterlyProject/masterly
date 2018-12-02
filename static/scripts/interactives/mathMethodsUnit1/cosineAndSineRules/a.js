@@ -273,3 +273,5 @@ a.create('text', [1.28+3.78, -0.15, '360'], {
 a.update();
 
 a.unsuspendUpdate();
+
+renderMathInElement(document.getElementById('boxa'))

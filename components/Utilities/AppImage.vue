@@ -1,7 +1,8 @@
 <template>
   <div
     :style="_width"
-    class="image-container">
+    class="image-container"
+  >
     <slot/>
   </div>
 </template>

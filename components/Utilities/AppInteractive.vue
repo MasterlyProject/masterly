@@ -1,11 +1,8 @@
 <template>
-  <div>
-    <div
-      :id="id"
-      :style="style"
-    />
-    <div v-html="path"/>
-  </div>
+  <div
+    :id="id"
+    :style="style"
+  />
 </template>
 
 <script>
@@ -38,7 +35,6 @@ export default {
   },
   data () {
     return {
-      path: "<script src=\'" + this.src + "\'><\/script>",
       id: "box" + this.name
     }
   },
@@ -54,6 +50,11 @@ export default {
         'margin': margin
       }
     }
+  },
+  mounted () {
+    let interactive = document.createElement('script')
+    interactive.setAttribute('src', this.src)
+    document.body.appendChild(interactive)
   }
 }
 </script>

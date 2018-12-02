@@ -15,6 +15,9 @@ module.exports = {
     ],
     script: [
       {
+        src: 'https://player.vimeo.com/api/player.js'
+      },
+      {
         defer: true,
         src: 'https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/katex.min.js',
         integrity: 'sha384-K3vbOmF2BtaVai+Qk37uypf7VrgBubhQreNQe9aGsz9lB63dIFiQVlJbr92dw2Lx',
