@@ -36,6 +36,10 @@
         </AppImage>
       </AppVideo>
 
+      <AppModal name="modalOne">
+        <p>hello world</p>
+      </AppModal>
+
       <AppMathProof>
 
         <template slot="blockEqu">

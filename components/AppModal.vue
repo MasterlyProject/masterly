@@ -5,6 +5,7 @@
     </button>
     <modal
       :name="name"
+      draggable="true"
       resizable="true"
       adaptive="true"
       width="800px">

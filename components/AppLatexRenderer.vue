@@ -3,9 +3,32 @@
     <div class="latex-code">
       <textarea v-model="code"></textarea>
     </div>
-    <div class="letex-render">
-      {{ code }}
+    <div 
+      class="latex-render" 
+      v-katex="{ 
+          expression: '\\begin{aligned}' + code + '\\end{aligned}', 
+          options: { 
+            throwOnError: false, 
+            displayMode: true,
+            macros: {
+              '\\vector': '(x_1,x_2,\\ldots,x_{1})',
+              'sin': '\\sin'
+            } 
+          }
+      }"
+    >
     </div>
+   
+   <div>
+    <input v-model="tempName" placeholder="edit me">
+    <p>Message is: {{ tempName }}</p>
+    <input v-model="tampValue" placeholder="edit me">
+    <p>Message is: {{ tampValue }}</p>
+    <!-- <button @click="updateMacros">submit</button> -->
+  </div>
+
+
+
   </div>
 </template>
 
@@ -14,7 +37,17 @@ export default {
   name: "AppLatexRenderer",
   data () {
     return {
-      code: ''
+      code: '\\text{write some latex code ...}',
+      macros: [],
+      tempName: '',
+      tampValue: ''
+    }
+  },
+  method: {
+    updateMacros() {
+      var m = tempName + ':' + tempValue
+      macros.push(m)
+      console.log(macros)
     }
   }
 }
