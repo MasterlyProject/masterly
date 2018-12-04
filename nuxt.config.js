@@ -35,6 +35,7 @@ module.exports = {
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Nunito:400,700,800' },
       {
         rel: 'stylesheet',
         href: 'https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/katex.min.css',

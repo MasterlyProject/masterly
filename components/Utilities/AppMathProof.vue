@@ -68,26 +68,30 @@ export default {
 }
 </script>
 
-<style lang="stylus" scoped>
+<style scoped>
 
-.proof-container
-  overflow scroll
+.proof-container {
+  overflow: scroll;
+}
 
-.proof-text
-  padding 5px
-  font-size 12px
-  text-transform uppercase
-  color #929395
-  cursor pointer
+.proof-text {
+  padding: 5px;
+  font-size: 12px;
+  text-transform: uppercase;
+  color: #929395;
+  cursor: pointer;
+}
 
-.proof
-  padding 20px 50px
+.proof {
+  padding: 20px 50px;
+}
 
-.proof-qed
-  text-align right
-  padding 5px
-  font-size 12px
-  text-transform uppercase
-  color #929395
+.proof-qed {
+  text-align: right;
+  padding: 5px;
+  font-size: 12px;
+  text-transform:uppercase;
+  color: #929395;
+}
 
 </style>
