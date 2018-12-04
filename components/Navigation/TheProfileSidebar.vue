@@ -5,22 +5,28 @@
     </div>
     <AppSidebarBtn
       text="My Progress"
-      borderColor="red"/>
+      border-color="red"
+    />
     <AppSidebarBtn
       text="Settings"
-      borderColor="green"/>
+      border-color="green"
+    />
     <AppSidebarBtn
       text="Account"
-      borderColor="blue"/>
+      border-color="blue"
+    />
     <AppSidebarBtn
       text="Upgrade"
-      borderColor="red"/>
+      border-color="red"
+    />
     <AppSidebarBtn
       text="Referral Program"
-      borderColor="green"/>
+      border-color="green"
+    />
     <AppSidebarBtn
       text="Logout"
-      borderColor="blue"/>
+      border-color="blue"
+    />
   </div>
 </template>
 

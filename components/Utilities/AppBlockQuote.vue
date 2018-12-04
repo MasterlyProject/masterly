@@ -1,5 +1,8 @@
 <template>
-  <div class="block-quote" :style="_color">
+  <div
+    :style="_color"
+    class="block-quote"
+  >
     <slot/>
   </div>
 </template>
@@ -10,7 +13,8 @@ export default {
   props: {
     color: {
       type: String,
-      required: true
+      required: false,
+      default: '#ccc'
     }
   },
   computed: {

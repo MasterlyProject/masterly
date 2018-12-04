@@ -1,5 +1,8 @@
 <template>
-  <div class="spacer" :style="_space"/>
+  <div
+    :style="_space"
+    class="spacer"
+  />
 </template>
 
 <script>

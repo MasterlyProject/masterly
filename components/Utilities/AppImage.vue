@@ -1,7 +1,8 @@
 <template>
   <div
     :style="_width"
-    class="image-container">
+    class="image-container"
+  >
     <slot/>
   </div>
 </template>
@@ -12,7 +13,8 @@ export default {
   props: {
     width: {
       type: String,
-      required: false
+      required: false,
+      default: 'medium'
     }
   },
   computed: {
