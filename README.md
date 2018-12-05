@@ -1,3 +1,5 @@
+[TOC]
+
 # Masterly Web App
 
 > Web app for the online learning of high school mathematics

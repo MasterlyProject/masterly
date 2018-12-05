@@ -8,7 +8,7 @@
       class="proof-text"
       @click="toggleProof"
     >
-      {{ proofText }}
+      {{ text }}
     </h5>
     <slot
       v-if="!isOpen"
@@ -34,20 +34,22 @@ export default {
       style: '',
       textStyle: {
         'width': '100px'
-      }
-    }
-  },
-  computed: {
-    proofText: function () {
-      if (this.isOpen) {
-        return 'hide proof'
-      }
-      return 'show proof'
+      },
+      text: 'show proof'
     }
   },
   methods: {
+    proofText () {
+      if (this.isOpen) {
+        this.text = 'hide proof'
+      } 
+      else {
+        this.text = 'show proof'
+      }
+    },
     toggleProof () {
       this.isOpen = !this.isOpen
+      this.proofText()
       if (this.isOpen) {
         this.style = {
           'background-color': '#f4f5f7',
