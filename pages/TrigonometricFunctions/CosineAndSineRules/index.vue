@@ -3,7 +3,7 @@
 
     <AppSection
       title="Revision of Right Triangles"
-      color="green"
+      color="blue"
     >
 
       <AppModal :mini-player="true">
