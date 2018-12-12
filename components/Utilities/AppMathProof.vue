@@ -4,16 +4,27 @@
     class="proof-container"
   >
     <h5
+      v-show="!isOpen"
       :style="textStyle"
       class="proof-text"
       @click="toggleProof"
     >
-      {{ text }}
+      Show Proof
     </h5>
-    <slot
-      v-if="!isOpen"
-      name="equation"
-    />
+    <h5
+      v-show="isOpen"
+      :style="textStyle"
+      class="proof-text"
+      @click="toggleProof"
+    >
+      Hide Proof
+    </h5>
+    <div :style="equStyle">
+      <slot
+        v-show="!isOpen"
+        name="equation"
+      />
+    </div>
     <div v-show="isOpen">
       <div class="proof">
         <slot/>
@@ -32,28 +43,22 @@ export default {
     return {
       isOpen: false,
       style: '',
+      equStyle: '',
       textStyle: {
         'width': '100px'
-      },
-      text: 'show proof'
+      }
     }
   },
   methods: {
-    proofText () {
-      if (this.isOpen) {
-        this.text = 'hide proof'
-      } 
-      else {
-        this.text = 'show proof'
-      }
-    },
     toggleProof () {
       this.isOpen = !this.isOpen
-      this.proofText()
       if (this.isOpen) {
         this.style = {
           'background-color': '#f4f5f7',
           'border' : '1px solid #e5e5e5'
+        }
+        this.equStyle = {
+          'display' : 'none'
         }
         this.textStyle = {
           'width': '85px'
@@ -61,6 +66,7 @@ export default {
       }
       else {
         this.style = ''
+        this.equStyle = ''
         this.textStyle = {
           'width': '100px'
         }
