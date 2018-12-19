@@ -21,8 +21,12 @@
         A triangle containing a right angle has powerful properties as the sides can be related by the Pythagorean theorem and their ratios are the basis of trigonometry.
       </p>
 
+      <AppImage width="medium">
+        <img src="@/assets/images/MethodsUnit1/CosineAndSineRules/CosAndSin.01.svg">
+      </AppImage>
+
       <AppImage width="large">
-        <img src="@/assets/images/MethodsUnit1/CosineAndSineRules/Unit.01.svg">
+        <img src="@/assets/images/MethodsUnit1/CosineAndSineRules/CosAndSin.02.svg">
       </AppImage>
 
       <p>
@@ -124,9 +128,8 @@
           <li>Centered at \(\left(0,0\right)\)</li>
         </ul>
       </p>
-
       <AppImage width="large">
-        <img src="@/assets/images/MethodsUnit1/CosineAndSineRules/Unit.01.svg">
+        <img src="@/assets/images/MethodsUnit1/CosineAndSineRules/CosAndSin.03.svg">
       </AppImage>
 
       <p>
@@ -142,7 +145,7 @@
       </AppSubtitle>
 
       <AppImage width="large">
-        <img src="@/assets/images/MethodsUnit1/CosineAndSineRules/Unit.02.svg">
+        <img src="@/assets/images/MethodsUnit1/CosineAndSineRules/CosAndSin.03.svg">
       </AppImage>
 
       <p>
@@ -157,10 +160,9 @@
         We can use the labeled right triangle and our current knowledge on trigonometry to find the unit circle definition for sine, cosine and tangent.
       </p>
 
-      <AppImage width="large">
-        <img src="@/assets/images/MethodsUnit1/CosineAndSineRules/Unit.03.svg">
+      <AppImage width="medium">
+        <img src="@/assets/images/MethodsUnit1/CosineAndSineRules/CosAndSin.02.svg">
       </AppImage>
-
       <p>
         The following calculations refer to the right triangle above created on the unit circle.
       </p>
@@ -268,7 +270,7 @@
       </ul>
       
       <AppImage width="large">
-        <img src="@/assets/images/MethodsUnit1/CosineAndSineRules/Unit.01.svg">
+        <img src="@/assets/images/MethodsUnit1/CosineAndSineRules/Unit.02.svg">
       </AppImage>
 
       <AppSubtitle>
@@ -329,8 +331,8 @@
         Consider the graphic below.
       </p>
       
-      <AppImage width="large">
-        <img src="@/assets/images/MethodsUnit1/CosineAndSineRules/Unit.01.svg">
+      <AppImage width="medium">
+        <img src="@/assets/images/MethodsUnit1/CosineAndSineRules/CosAndSin.02.svg">
       </AppImage>
 
       <p>
@@ -355,20 +357,107 @@
           slot="equation"
           color="green" 
         >
-          $$
-          A = \frac{1}{2}ab\sin C
-          $$
+          $$A = \frac{1}{2}ab\sin C$$
         </AppBlockQuote>
-        
+
         <p>
           To derive the area rule, we must prove the formula for both acute and obtuse triangles. The area rule will apply to all triangles if the rule is true for both of these cases.
         </p>
 
-        <AppBlockQuote color="green">
-          $$
-          A = \frac{1}{2}ab\sin C
-          $$
-        </AppBlockQuote>
+        <!--
+
+          TOGGLE
+
+          
+        -->
+        <AppToggle 
+          color="green"
+          @toggle="toggleButton"
+        >
+          <div v-show="flag">Acute Proof</div>
+          <div v-show="!flag">Obtuse Proof</div>
+        </AppToggle>
+
+        <section v-show="flag">
+          <AppSubtitle>Derivation for Acute Triangles</AppSubtitle>
+          <!--<AppBlockQuote color="green">$$A = \frac{1}{2}ab\sin C$$</AppBlockQuote>-->
+          <p>
+            Consider acute triangle  \(\triangle ABC\). Finding an expression for the height \(h\) of the triangle will lead to the formula of the area rule for acute triangles.
+          </p>
+
+          <AppImage width="medium">
+            <img src="@/assets/images/MethodsUnit1/CosineAndSineRules/CosAndSin.02.svg">
+          </AppImage>
+
+          <p>
+            Consider \(\triangle CBD\)
+            
+            $$\begin{aligned}
+            \sin C &= \frac{\text{opposite}}{\text{hypotenuse}} = \frac{h}{a}
+            \\
+            h &= a \sin C   \tag{1}
+            \end{aligned}$$
+
+            Notice that the base of the triangle is side \(b\)
+
+            $$\begin{aligned}
+            b = base    \tag{2}
+            \end{aligned}$$
+
+            Consider the formula:
+
+            $$\begin{aligned}
+            A = \frac{1}{2}\text{base}\cdot \text{height}   \tag{3}
+            \end{aligned}$$
+
+            Sub \((1)\) and \((2)\) into \((3)\)
+            <AppBlockQuote color="green">$$A = \frac{1}{2}ab\sin C$$</AppBlockQuote>
+          </p>
+        </section>
+
+        <section v-show="!flag">
+          <AppSubtitle>Derivation for Obtuse Triangles</AppSubtitle>
+          <p>
+            An identical method as the above can be used to derive the area rule for obtuse triangles. Consider obtuse triangle  \(\triangle ABC\).
+          </p>
+
+          <AppImage width="medium">
+            <img src="@/assets/images/MethodsUnit1/CosineAndSineRules/CosAndSin.02.svg">
+          </AppImage>
+
+          <p>Consider \(\triangle CBD\)</p>
+
+          <ul>
+            <li> \(\angle BCD\)  is \(180^\circ - C\) as it is the supplementary angle of \(C\).</li>
+            <li> We will use this triangle to find an expression for the height \(h\) of \(\triangle ABC\).</li>
+            <li> View the supplementary angles of sine section below to see how \(\sin(180^ \circ−C)=\sin C\).</li>
+          </ul>
+
+          <p>
+            $$\begin{aligned}
+            \sin \left(180^\circ - C\right) &= \frac{\text{opposite}}{\text{hypotenuse}} = \frac{h}{a}
+            \\
+            h &= a \sin\left(180^\circ - C\right)
+            \\
+            h &= \sin C     \tag{1}
+            \end{aligned}$$
+
+            Notice that the base of the triangle is side \(b\)
+          
+            $$\begin{aligned}
+            b=base      \tag{2}
+            \end{aligned}$$
+
+            Consider the formula:
+
+            $$\begin{aligned}
+            A = \frac{1}{2}\text{base}\cdot \text{height}   \tag{3}
+            \end{aligned}$$
+
+            Sub \((1)\) and \((2)\) into (\(3)\)
+          </p>
+          <AppBlockQuote color="green">$$A = \frac{1}{2}ab\sin C$$</AppBlockQuote>
+        </section>
 
       </AppMathProof>
 
@@ -524,6 +613,7 @@ import AppColumn from '@/components/Utilities/AppColumn'
 import AppImage from '@/components/Utilities/AppImage'
 import AppBlockQuote from '@/components/Utilities/AppBlockQuote'
 import AppMathProof from '@/components/Utilities/AppMathProof'
+import AppToggle from '@/components/Utilities/AppToggle'
 
 
 export default {
@@ -537,16 +627,28 @@ export default {
     AppColumn,
     AppImage,
     AppBlockQuote,
-    AppMathProof
+    AppMathProof,
+    AppToggle
+  },
+  data() {
+    return {
+      flag: true,
+      text: 'Acute Proof'
+    }
   },
   mounted () {
     renderMathInElement(document.getElementById("content"))
+  },
+  methods: {
+    toggleButton() {
+      this.flag = !this.flag
+    }
   }
 }
 
 </script>
 
-<style>
+<style scoped>
 
 
 </style>

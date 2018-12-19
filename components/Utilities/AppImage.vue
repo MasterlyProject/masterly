@@ -23,7 +23,7 @@ export default {
         case 'large':
           return { 'max-width': '540px' }
         case 'medium':
-          return { 'max-width' : '360px' }
+          return { 'max-width' : '320px' }
         case 'small':
           return { 'max-width' : '240px' }
       }

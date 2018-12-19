@@ -70,7 +70,7 @@ header
   background-color: #454545
 
 img
-  max-width 150px
+  max-width 200px
   width 100%
 
 .spacer

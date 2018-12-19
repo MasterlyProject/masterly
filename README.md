@@ -300,3 +300,57 @@ AppVideo is a component for embedding **Vimeo videos**.
 />
 ```
 
+### AppToggle
+
+AppToggle is essentially a switch that can be used with `v-show` or `v-if` in order to show certain elements.
+
+#### Properties
+
+| Name  | Required | Type   | Default | Description                                                  |
+| ----- | -------- | ------ | ------- | ------------------------------------------------------------ |
+| color | `true`   | String |         | The toggle's theme colour. Write `"red"`, `"green"` or `"blue"`. If this prop is misspelt, `blue` will be used by default. **Note that the field is still required.** |
+
+#### Event Handlers
+
+There exists an event handler `@click="$emit('toggle')"` which can be used to change a flag in the parants data object (e.g. `active=!active` ). This is used to perhaps change the text in the `slot` when the button is toggled (this is shown in `usage` ).
+
+#### Usage
+
+```vue
+<AppToggle 
+  color="green"
+  @toggle="toggleButton"
+>
+  <div v-show="flag">Code Block 1</div>
+  <div v-show="!flag">Code Block 2</div>
+</AppToggle>
+
+<!-- you can also use it to show a whole section of code when toggled -->
+<section v-show="flag">
+   <!-- add code block 1 -->
+</section>
+
+<section v-show="!flag">
+   <!-- add code block 1 -->
+</section>
+
+<!--  ...  -->
+
+<script>
+export default {
+  data() {
+    return {
+      flag: true,
+      text: ''
+    }
+  },
+  methods: {
+    toggleButton() {
+      this.flag = !this.flag
+    }
+  }
+}
+</script>
+    
+```
+
