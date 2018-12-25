@@ -19,7 +19,7 @@
 
 
       <AppImage width="medium">
-        <img src="@/assets/images/MethodsUnit1/CosineAndSineRules/test.01.svg">
+        <img src="@/assets/images/MethodsUnit1/CosineAndSineRules/CosAndSin.02.svg">
       </AppImage>
 
       <p>
@@ -43,7 +43,7 @@
       </p>
 
       <AppImage width="medium">
-        <img src="@/assets/images/MethodsUnit1/CosineAndSineRules/test.01.svg">
+        <img src="@/assets/images/MethodsUnit1/CosineAndSineRules/CosAndSin.02.svg">
       </AppImage>
 
       <p>
@@ -76,7 +76,7 @@
       </p>
 
       <AppImage width="medium">
-        <img src="@/assets/images/MethodsUnit1/CosineAndSineRules/test.01.svg">
+        <img src="@/assets/images/MethodsUnit1/CosineAndSineRules/CosAndSin.02.svg">
       </AppImage>
 
       <p>
@@ -115,7 +115,7 @@
       </p>
 
       <AppImage width="medium">
-        <img src="@/assets/images/MethodsUnit1/CosineAndSineRules/test.01.svg">
+        <img src="@/assets/images/MethodsUnit1/CosineAndSineRules/CosAndSin.02.svg">
       </AppImage>
 
       <p>

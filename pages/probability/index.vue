@@ -26,7 +26,7 @@
       </p>
 
       <AppImage width="large">
-        <img src="@/assets/images/MethodsUnit1/CosineAndSineRules/Unit.01.svg">
+        <img src="@/assets/images/MethodsUnit1/CosineAndSineRules/CosAndSin.02.svg">
       </AppImage>
 
       <p>
@@ -42,7 +42,7 @@
       </AppSubtitle>
 
       <AppImage width="large">
-        <img src="@/assets/images/MethodsUnit1/CosineAndSineRules/Unit.02.svg">
+        <img src="@/assets/images/MethodsUnit1/CosineAndSineRules/CosAndSin.02.svg">
       </AppImage>
 
       <p>
@@ -58,7 +58,7 @@
       </p>
 
       <AppImage width="large">
-        <img src="@/assets/images/MethodsUnit1/CosineAndSineRules/Unit.03.svg">
+        <img src="@/assets/images/MethodsUnit1/CosineAndSineRules/CosAndSin.02.svg">
       </AppImage>
 
       <p>
@@ -149,7 +149,7 @@
         
         <p>To derive the formula, create a perpendicular height from angle \(B\) to side \(b\). This is shown by the orange dashed line. Expressing the height in terms of a side and the sine of an angle will lead to the formula of the sine rule. Consider the acute triangle \(\text{$\triangle $ABC}\).</p>
         <AppImage width="medium">
-          <img src="@/assets/images/MethodsUnit1/CosineAndSineRules/cns_16_Cos_Acute.svg">
+          <img src="@/assets/images/MethodsUnit1/CosineAndSineRules/CosAndSin.02.svg">
         </AppImage>
 
         <p>
