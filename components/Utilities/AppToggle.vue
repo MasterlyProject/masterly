@@ -1,12 +1,10 @@
 <!--
-
     Fix:
         when you click on the toggle, change the text
         
         depending if toggle is true/false, v-show <section> appropriate section </section> (I think you need to $emit to parent)
         
         Maybe implement v-scroll to top of AppProof button
-
 -->
 
 <template>
@@ -23,7 +21,7 @@
         :class="_color"
         for="checkbox"
       />
-  
+
       <slot />
     </section>
   </div>
@@ -74,7 +72,6 @@ label {
   position: relative;
   background: rgb(189, 189, 189);
   border-radius: 30px;
-
   transform:rotateY(180deg);
   
   transition: background-color 0.4s;
@@ -91,7 +88,6 @@ label:after {
   background: #FFF;
   border-radius: 10px;
 }
-
 input:checked + label {
   background: rgb(189, 189, 189);
 }
@@ -107,13 +103,8 @@ input:checked + label {
 .default {
   background-color: #2caaca;
 }
-
 input:checked + label:after {
   left: auto;
   right: 0;
 }
-
-
 </style>
-
-

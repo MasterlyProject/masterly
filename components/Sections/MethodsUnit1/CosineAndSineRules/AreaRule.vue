@@ -77,7 +77,7 @@
           </p>
 
           <AppImage width="medium">
-            <img src="@/assets/images/MethodsUnit1/CosineAndSineRules/CosAndSin.09.svg">
+            <img src="@/assets/images/MethodsUnit1/CosineAndSineRules/CosAndSin.12.svg">
           </AppImage>
 
           <p>
