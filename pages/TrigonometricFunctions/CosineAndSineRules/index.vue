@@ -11,6 +11,10 @@
 
     <TheCosineRule />
 
+    <AmbiguousCase />
+
+    <AngleOfInclination />
+
   </div>
 </template>
 
@@ -20,6 +24,8 @@ import TheUnitCircle from '@/components/Sections/MethodsUnit1/CosineAndSineRules
 import AreaRule from '@/components/Sections/MethodsUnit1/CosineAndSineRules/AreaRule'
 import TheSineRule from '@/components/Sections/MethodsUnit1/CosineAndSineRules/TheSineRule'
 import TheCosineRule from '@/components/Sections/MethodsUnit1/CosineAndSineRules/TheCosineRule'
+import AmbiguousCase from '@/components/Sections/MethodsUnit1/CosineAndSineRules/AmbiguousCase'
+import AngleOfInclination from '@/components/Sections/MethodsUnit1/CosineAndSineRules/AngleOfInclination'
 
 
 export default {
@@ -28,7 +34,9 @@ export default {
     TheUnitCircle,
     AreaRule,
     TheSineRule,
-    TheCosineRule
+    TheCosineRule,
+    AmbiguousCase,
+    AngleOfInclination
   },
   mounted () {
     renderMathInElement(document.getElementById("content"))
@@ -40,43 +48,4 @@ export default {
 <style scoped>
 
 
-</style>
-
-<template>
-  <div>
-
-    <RevisionOfRightTriangles />
-
-    <TheUnitCircle />
-
-    <AreaRule />
-
-    <TheSineRule />
-
-    <TheCosineRule />
-
-  </div>
-</template>
-
-<script>
-import RevisionOfRightTriangles from '@/components/Sections/MethodsUnit1/CosineAndSineRules/RevisionOfRightTriangles'
-import TheUnitCircle from '@/components/Sections/MethodsUnit1/CosineAndSineRules/TheUnitCircle'
-import AreaRule from '@/components/Sections/MethodsUnit1/CosineAndSineRules/AreaRule'
-import TheSineRule from '@/components/Sections/MethodsUnit1/CosineAndSineRules/TheSineRule'
-import TheCosineRule from '@/components/Sections/MethodsUnit1/CosineAndSineRules/TheCosineRule'
-export default {
-  components: {
-    RevisionOfRightTriangles,
-    TheUnitCircle,
-    AreaRule,
-    TheSineRule,
-    TheCosineRule
-  },
-  mounted () {
-    renderMathInElement(document.getElementById("content"))
-  }
-}
-</script>
-
-<style scoped>
 </style>

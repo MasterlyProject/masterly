@@ -70,7 +70,7 @@
           
           <p>
             To include angle \(B\) and side \(b\) in the relationship, construct another perpendicular height from angle \(A\) to side \(a\). 
-            This is shown by the orange dashed line in the graphic below.
+            This is shown by the green dashed line in the graphic below.
           </p>
 
           <AppImage width="medium">
@@ -108,7 +108,7 @@
             $$\begin{aligned} h &= h \\ c\sin A &= a\sin C \\ \frac { c }{ \sin{ C }} &= \frac{ a }{ \sin{ A }} \tag{3} \end{aligned}$$
           </p>
           <p>
-            To include angle \(B\) and side \(b\) in the relationship, construct another perpendicular height from angle \(A\) to the extension of side \(a\). This is shown by the orange dashed line in the graphic below.
+            To include angle \(B\) and side \(b\) in the relationship, construct another perpendicular height from angle \(A\) to the extension of side \(a\). This is shown by the green dashed line in the graphic below.
           </p>
           <AppImage width="medium">
             <img src="@/assets/images/MethodsUnit1/CosineAndSineRules/CosAndSin.14.svg">
@@ -161,9 +161,20 @@
         Consider the two triangles below with different sized angles and sides.
       </p>
 
-      <AppImage width="large">
-        <img src="@/assets/images/MethodsUnit1/CosineAndSineRules/CosAndSin.02.svg">
-      </AppImage>
+      <AppColumns>
+        <AppColumn width="250px">
+          <!-- COLUMN 1 GOES HERE -->
+          <AppImage width="medium">
+            <img src="@/assets/images/MethodsUnit1/CosineAndSineRules/CosAndSin.15.svg">
+          </AppImage>
+        </AppColumn>
+        <AppColumn width="250px">
+          <!-- COLUMN 2 GOES HERE -->
+          <AppImage width="small">
+            <img src="@/assets/images/MethodsUnit1/CosineAndSineRules/CosAndSin.16.svg">
+          </AppImage>
+        </AppColumn>
+      </AppColumns>
 
       <p>
         The graphic shows two triangles. One triangle has an angle and opposite side labelled '\(A\)' and '\(a\)' respectively and the other triangle has an angle and opposite side labelled '\(B\)' and '\(b\)' respectively. Notice that angle '\(A\)' is larger than '\(B\)' and side '\(a\)' is longer than '\(b\)'. We can conclude the following result in the statement below.
@@ -195,6 +206,10 @@ import AppImage from '@/components/Utilities/AppImage'
 import AppBlockQuote from '@/components/Utilities/AppBlockQuote'
 import AppMathProof from '@/components/Utilities/AppMathProof'
 import AppToggle from '@/components/Utilities/AppToggle'
+import AppColumns from '@/components/Utilities/AppColumns'
+import AppColumn from '@/components/Utilities/AppColumn'
+
+
 export default {
   components: {
     AppSubtitle,
@@ -204,7 +219,9 @@ export default {
     AppImage,
     AppBlockQuote,
     AppMathProof,
-    AppToggle
+    AppToggle,
+    AppColumns,
+    AppColumn
   },
   data() {
     return {

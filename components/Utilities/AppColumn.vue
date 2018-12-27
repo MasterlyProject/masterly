@@ -46,6 +46,7 @@ export default {
 .column {
   flex: 1 1;
   margin: 0 10px;
+  flex-wrap: wrap;
 }
 
 </style>

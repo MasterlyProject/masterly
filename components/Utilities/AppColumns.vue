@@ -33,7 +33,13 @@ export default {
   width: calc(100% + 20px);
   display: flex;
   flex-flow: row wrap;
-  margin: 0 auto
+  margin: 0 auto;
+}
+
+@media (max-width: 800px) {
+  .column {
+    min-width: 60%; 
+  }
 }
 
 </style>
